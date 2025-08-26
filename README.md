@@ -23,7 +23,7 @@ C:\xampp\htdocs
 
 ### 2. Configuração do Banco de Dados
 
-1. Crie um banco no MySQL com o nome: **bd_distribuidora**
+1. Crie um banco no MySQL com o nome: <span style="color:green">bd_distribuidora</span>
 
 
 2. Importe o arquivo de estrutura do banco, disponível neste repositório: **bddistribuidora.sql**
