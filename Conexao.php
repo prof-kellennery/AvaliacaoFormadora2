@@ -7,8 +7,11 @@ class Conexao{
     
     public static function getConexao()
     {
-        // implementar aqui a conexão com o banco
-
+        if (!isset(self::$instancia))
+        {
+            // fazer a conexão do banco de dados
+        }
+        return self::$instancia;
     }
 }
 

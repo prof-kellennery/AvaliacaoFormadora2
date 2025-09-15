@@ -48,8 +48,7 @@ function CarregarDados(dados) {
         var row = '<tr>' +
             '<td>' + dado.idEditora + '</td>' +
             '<td>' + (dado.nome ? dado.nome : "---") + '</td>' +
-            '<td>' + (dado.endereco ? dado.endereco : "---") + '</td>' +
-            '<td>' + (dado.telefone ? dado.telefone : "---") + '</td>' +
+            '<td>' + (dado.uf ? dado.uf : "---") + '</td>' +
             '<td><a href="#" class="visualiza" data-id="' + dado.idEditora + '"><i class="fa fa-search"></i></a></td>' +
             '<td><a href="#" class="altera" data-id="' + dado.idEditora + '"><i class="fa fa-pencil"></i></a></td>' +
             '<td><a href="#" class="exclui" data-id="' + dado.idEditora + '"><i class="fa fa-trash"></i></a></td>' +

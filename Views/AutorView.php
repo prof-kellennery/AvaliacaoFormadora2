@@ -92,6 +92,7 @@
                 <th>Nacionalidade</th>
                 <th></th>
                 <th></th>
+                <th></th>
               </tr>
             </thead>  
             <tbody id="linhas">
