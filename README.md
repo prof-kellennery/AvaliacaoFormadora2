@@ -1,12 +1,12 @@
-# Template de Projeto - CRUD em Distribuidora de Livros
+# Template de Projeto - Criação e Conexão de Banco de Dados
 
-Este repositório contém um **template completo** para a realização de um trabalho prático, no qual o aluno deverá **realizar a conexão com o banco de dados** e implementar um **CRUD** (Create, Read, Update, Delete) em uma das tabelas do banco.
+Este repositório contém um **template completo** para a realização de um trabalho prático, no qual o aluno deverá **criar um banco de dados relacional no servidor**, **popular o banco de dados criado** utilizando o script disponível neste repositório e **realizar a conexão com o banco de dados** utilizando a linguagem PHP.
 
 ---
 
 ## 📂 Estrutura do Projeto
 
-O projeto já possui toda a **estrutura básica** para iniciar a implementação do CRUD. Basta configurar o banco de dados e começar a desenvolver as funcionalidades.
+O projeto já possui toda a **estrutura básica** para iniciar a conexão com o banco de dados. Basta criar o banco de dados no servidor e realizar a conexão no arquivo Conexao.php.
 
 ---
 
@@ -23,25 +23,13 @@ C:\xampp\htdocs
 
 ### 2. Configuração do Banco de Dados
 
-1. Crie um banco no MySQL com o nome:  **bd_distribuidora**
+1. Crie um banco de dados relacional no MySQL com o nome:  **bd_distribuidora** (obs.: modelagem será informada durante a avaliação em aula)
 
 
-2. Importe o arquivo de estrutura do banco, disponível neste repositório: **bddistribuidora.sql**
+2. Execute o script para popular o banco criado, disponível neste repositório: **bddistribuidora.sql**
 
 
-> Executando este script, todas as **tabelas, relacionamentos e registros iniciais** serão criados automaticamente.
-
----
-
-### 3. Implementação do CRUD
-
-- Escolha uma tabela do banco de dados e implemente as operações de **CRUD**:
-  - **C**reate → Inserção de registros
-  - **R**ead → Leitura de registros
-  - **U**pdate → Atualização de registros
-  - **D**elete → Exclusão de registros
-
-- Certifique-se de que a **conexão com o banco de dados** esteja correta no arquivo de configuração do projeto.
+> Executando este script, todas as tabelas serão populadas para visualizar se a conexão realizada está funcionando.
 
 ---
 
@@ -54,4 +42,4 @@ C:\xampp\htdocs
 
 ## 🎯 Objetivo
 
-O objetivo deste trabalho é praticar **conexão com banco de dados** e **implementação de CRUD**, utilizando a estrutura já fornecida no template.
+O objetivo deste trabalho é praticar **conexão com banco de dados** , utilizando a estrutura já fornecida no template.
