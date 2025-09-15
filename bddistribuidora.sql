@@ -1,38 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Tempo de geração: 18/08/2025 às 18:12
--- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.0.30
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Banco de dados: `bd_distribuidora`
---
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `autor`
---
-
-CREATE TABLE `autor` (
-  `id_autor` int(11) NOT NULL,
-  `nome` varchar(255) NOT NULL,
-  `nacionalidade` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
 --
 -- Despejando dados para a tabela `autor`
 --
@@ -190,17 +155,6 @@ INSERT INTO `autor` (`id_autor`, `nome`, `nacionalidade`) VALUES
 (150, 'Juliana Ribeiro', 'Suécia');
 
 -- --------------------------------------------------------
-
---
--- Estrutura para tabela `cliente`
---
-
-CREATE TABLE `cliente` (
-  `id_cliente` int(11) NOT NULL,
-  `tipo_cliente` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
 -- Despejando dados para a tabela `cliente`
 --
 
@@ -239,19 +193,6 @@ INSERT INTO `cliente` (`id_cliente`, `tipo_cliente`) VALUES
 (32, 'Jurídico');
 
 -- --------------------------------------------------------
-
---
--- Estrutura para tabela `cliente_fisico`
---
-
-CREATE TABLE `cliente_fisico` (
-  `id_cliente` int(11) NOT NULL,
-  `nome` varchar(255) NOT NULL,
-  `cpf` char(11) NOT NULL,
-  `endereco` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
 -- Despejando dados para a tabela `cliente_fisico`
 --
 
@@ -281,19 +222,6 @@ INSERT INTO `cliente_fisico` (`id_cliente`, `nome`, `cpf`, `endereco`) VALUES
 (23, 'Xavier Mendes', '809.604.480', 'Rua das Orquídeas, 19, Goiânia, GO');
 
 -- --------------------------------------------------------
-
---
--- Estrutura para tabela `cliente_juridico`
---
-
-CREATE TABLE `cliente_juridico` (
-  `id_cliente` int(11) NOT NULL,
-  `razao_social` varchar(255) NOT NULL,
-  `cnpj` char(14) NOT NULL,
-  `endereco` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
 -- Despejando dados para a tabela `cliente_juridico`
 --
 
@@ -309,18 +237,6 @@ INSERT INTO `cliente_juridico` (`id_cliente`, `razao_social`, `cnpj`, `endereco`
 (32, 'Softwares Integrados Ltda', '77.888.999/000', 'Av. Tecnologia, 123, Campinas, SP');
 
 -- --------------------------------------------------------
-
---
--- Estrutura para tabela `editora`
---
-
-CREATE TABLE `editora` (
-  `id_editora` int(11) NOT NULL,
-  `nome` varchar(255) NOT NULL,
-  `uf` char(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
 -- Despejando dados para a tabela `editora`
 --
 
@@ -337,22 +253,6 @@ INSERT INTO `editora` (`id_editora`, `nome`, `uf`) VALUES
 (10, 'Editora Kappa', 'PR');
 
 -- --------------------------------------------------------
-
---
--- Estrutura para tabela `livro`
---
-
-CREATE TABLE `livro` (
-  `id_livro` int(11) NOT NULL,
-  `isbn` varchar(20) NOT NULL,
-  `titulo` varchar(255) NOT NULL,
-  `ano_publicacao` int(11) NOT NULL,
-  `quantidade_estoque` int(11) NOT NULL,
-  `valor` decimal(10,2) NOT NULL,
-  `id_editora` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
 -- Despejando dados para a tabela `livro`
 --
 
@@ -745,17 +645,6 @@ INSERT INTO `livro` (`id_livro`, `isbn`, `titulo`, `ano_publicacao`, `quantidade
 (386, '9780000000386', 'Oculto Caminho', 1992, 18, 71.71, 10);
 
 -- --------------------------------------------------------
-
---
--- Estrutura para tabela `livro_autor`
---
-
-CREATE TABLE `livro_autor` (
-  `id_autor` int(11) NOT NULL,
-  `id_livro` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
 -- Despejando dados para a tabela `livro_autor`
 --
 
@@ -2089,18 +1978,6 @@ INSERT INTO `livro_autor` (`id_autor`, `id_livro`) VALUES
 (150, 380);
 
 -- --------------------------------------------------------
-
---
--- Estrutura para tabela `livro_venda`
---
-
-CREATE TABLE `livro_venda` (
-  `id_livro` int(11) NOT NULL,
-  `id_venda` int(11) NOT NULL,
-  `qtde_vendida` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
 -- Despejando dados para a tabela `livro_venda`
 --
 
@@ -3734,19 +3611,6 @@ INSERT INTO `livro_venda` (`id_livro`, `id_venda`, `qtde_vendida`) VALUES
 (386, 429, 9);
 
 -- --------------------------------------------------------
-
---
--- Estrutura para tabela `venda`
---
-
-CREATE TABLE `venda` (
-  `id_venda` int(11) NOT NULL,
-  `data_venda` date NOT NULL,
-  `forma_pagto` varchar(50) NOT NULL,
-  `id_cliente` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
 -- Despejando dados para a tabela `venda`
 --
 
@@ -4297,149 +4161,3 @@ INSERT INTO `venda` (`id_venda`, `data_venda`, `forma_pagto`, `id_cliente`) VALU
 (544, '2024-03-29', 'Carteira digital', 32),
 (545, '2017-07-18', 'Boleto Bancário', 32),
 (546, '2020-12-25', 'Cartão de Crédito', 32);
-
---
--- Índices para tabelas despejadas
---
-
---
--- Índices de tabela `autor`
---
-ALTER TABLE `autor`
-  ADD PRIMARY KEY (`id_autor`);
-
---
--- Índices de tabela `cliente`
---
-ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`id_cliente`);
-
---
--- Índices de tabela `cliente_fisico`
---
-ALTER TABLE `cliente_fisico`
-  ADD PRIMARY KEY (`id_cliente`),
-  ADD UNIQUE KEY `cpf` (`cpf`);
-
---
--- Índices de tabela `cliente_juridico`
---
-ALTER TABLE `cliente_juridico`
-  ADD PRIMARY KEY (`id_cliente`),
-  ADD UNIQUE KEY `cnpj` (`cnpj`);
-
---
--- Índices de tabela `editora`
---
-ALTER TABLE `editora`
-  ADD PRIMARY KEY (`id_editora`);
-
---
--- Índices de tabela `livro`
---
-ALTER TABLE `livro`
-  ADD PRIMARY KEY (`id_livro`),
-  ADD KEY `fk_editora` (`id_editora`);
-
---
--- Índices de tabela `livro_autor`
---
-ALTER TABLE `livro_autor`
-  ADD PRIMARY KEY (`id_autor`,`id_livro`),
-  ADD KEY `fk_livro` (`id_livro`),
-  ADD KEY `fk_autor` (`id_autor`,`id_livro`);
-
---
--- Índices de tabela `livro_venda`
---
-ALTER TABLE `livro_venda`
-  ADD PRIMARY KEY (`id_livro`,`id_venda`),
-  ADD KEY `fk_venda_livro` (`id_venda`);
-
---
--- Índices de tabela `venda`
---
-ALTER TABLE `venda`
-  ADD PRIMARY KEY (`id_venda`),
-  ADD KEY `fk_venda_cliente` (`id_cliente`);
-
---
--- AUTO_INCREMENT para tabelas despejadas
---
-
---
--- AUTO_INCREMENT de tabela `autor`
---
-ALTER TABLE `autor`
-  MODIFY `id_autor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
-
---
--- AUTO_INCREMENT de tabela `cliente`
---
-ALTER TABLE `cliente`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
-
---
--- AUTO_INCREMENT de tabela `editora`
---
-ALTER TABLE `editora`
-  MODIFY `id_editora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT de tabela `livro`
---
-ALTER TABLE `livro`
-  MODIFY `id_livro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=387;
-
---
--- AUTO_INCREMENT de tabela `venda`
---
-ALTER TABLE `venda`
-  MODIFY `id_venda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=547;
-
---
--- Restrições para tabelas despejadas
---
-
---
--- Restrições para tabelas `cliente_fisico`
---
-ALTER TABLE `cliente_fisico`
-  ADD CONSTRAINT `fk_cliente_fisico` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Restrições para tabelas `cliente_juridico`
---
-ALTER TABLE `cliente_juridico`
-  ADD CONSTRAINT `fk_cliente_juridico` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Restrições para tabelas `livro`
---
-ALTER TABLE `livro`
-  ADD CONSTRAINT `fk_editora` FOREIGN KEY (`id_editora`) REFERENCES `editora` (`id_editora`) ON UPDATE CASCADE;
-
---
--- Restrições para tabelas `livro_autor`
---
-ALTER TABLE `livro_autor`
-  ADD CONSTRAINT `fk_autor` FOREIGN KEY (`id_autor`) REFERENCES `autor` (`id_autor`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_livro` FOREIGN KEY (`id_livro`) REFERENCES `livro` (`id_livro`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Restrições para tabelas `livro_venda`
---
-ALTER TABLE `livro_venda`
-  ADD CONSTRAINT `fk_livro_venda` FOREIGN KEY (`id_livro`) REFERENCES `livro` (`id_livro`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_venda_livro` FOREIGN KEY (`id_venda`) REFERENCES `venda` (`id_venda`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Restrições para tabelas `venda`
---
-ALTER TABLE `venda`
-  ADD CONSTRAINT `fk_venda_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`) ON UPDATE CASCADE;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
