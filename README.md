@@ -13,9 +13,9 @@ O projeto já possui toda a **estrutura básica** para iniciar a conexão com o 
 ## 💻 Instruções de Uso
 
 ### 1. Download do Projeto
-Baixe este repositório e **coloque a pasta na raiz do servidor local** (localhost) do XAMPP:  
+Baixe este repositório e **coloque na raiz do servidor local** (htdocs do XAMPP), criando uma pasta com o mesmo nome do projeto:
 
-C:\xampp\htdocs
+C:\xampp\htdocs\AvaliacaoFormadora2
 
 > Caso o caminho do XAMPP tenha sido alterado, coloque a pasta na raiz do servidor correspondente.
 
